@@ -18,4 +18,4 @@ the in the terminal use:
 
 ##### you can visit the search page using bottom right link
 
-![](https:https://i.gyazo.com/288b3fd4e86091ae0f43a018edc4e872.png)
+![](https://i.gyazo.com/288b3fd4e86091ae0f43a018edc4e872.png)
