@@ -12,7 +12,7 @@ the in the terminal use:
 - `npm install` to install all project dependencies
 - `npm start` to start the development server 
 
-- once the development server you the home page should open on  http://localhost:3000/ with a set of default books 
+- once the development server you the home page should open on  http://localhost:3000/ with a default collection of books 
 
 ![](https://i.gyazo.com/5e378556dbb45833fc783c8f07d6908e.png)
 
