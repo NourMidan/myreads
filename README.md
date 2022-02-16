@@ -20,7 +20,12 @@ the in the terminal use:
 
 ![](https://i.gyazo.com/288b3fd4e86091ae0f43a018edc4e872.png)
 
-- after that start adding  and moving books through bookshelf using the green select button
+- after that start adding  and moving books through bookshelf using the green select button and the changes should be stored
 
 ![](https://i.gyazo.com/f6abab1633237e51027779041a0f829e.png)
+
+#### Resources
+-![create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
+-![React Router](https://reactrouter.com/docs/en/v6)
+-![react-debounce-input](https://www.npmjs.com/package/react-debounce-input)
 
