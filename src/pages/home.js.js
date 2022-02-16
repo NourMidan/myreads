@@ -27,9 +27,9 @@ const BooksApp = (props) => {
     let local = (item) => JSON.parse(localStorage.getItem(item));
 
     if (
-      local("wantToRead").length > 0 ||
-      local("currentlyReading").length > 0 ||
-      local("read").length > 0
+      local("wantToRead")?.length > 0 ||
+      local("currentlyReading")?.length > 0 ||
+      local("read")?.length > 0
     ) {
       setWantToRead(local("wantToRead"));
       setCurrentlyReading(local("currentlyReading"));
