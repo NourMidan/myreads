@@ -20,7 +20,7 @@ the in the terminal use:
 
 ![](https://i.gyazo.com/288b3fd4e86091ae0f43a018edc4e872.png)
 
-##### you can start adding books and moving them through bookshelf using the green select button
+##### - you can start adding books and moving them through bookshelf using the green select button
 
 ![](https://i.gyazo.com/f6abab1633237e51027779041a0f829e.png)
 
