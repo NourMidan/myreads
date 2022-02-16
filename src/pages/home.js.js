@@ -6,23 +6,42 @@ import { BookShelf } from "../components/booksShelf";
 import { Search } from "./search";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { getAll } from "../BooksAPI";
 
 const BooksApp = (props) => {
   const [allBooks, setAllBooks] = useState([]);
+  const [defaultBooks, setDefaultBooks] = useState([]);
+
   const [wantToRead, setWantToRead] = useState([]);
   const [currentlyReading, setCurrentlyReading] = useState([]);
   const [read, setRead] = useState([]);
   let location = useLocation();
 
-  // getting stored books from local storage
+  // getting the default books for new users
   useEffect(() => {
-    localStorage.getItem("wantToRead") &&
-      setWantToRead(JSON.parse(localStorage.getItem("wantToRead")));
-    localStorage.getItem("currentlyReading") &&
-      setCurrentlyReading(JSON.parse(localStorage.getItem("currentlyReading")));
-    localStorage.getItem("read") &&
-      setRead(JSON.parse(localStorage.getItem("read")));
+    Promise.resolve(getAll()).then((res) => setDefaultBooks(res));
   }, []);
+
+  // checking the local storage if  it contains stored books and if not display the default books
+  useEffect(() => {
+    let local = (item) => JSON.parse(localStorage.getItem(item));
+
+    if (
+      local("wantToRead").length > 0 ||
+      local("currentlyReading").length > 0 ||
+      local("read").length > 0
+    ) {
+      setWantToRead(local("wantToRead"));
+      setCurrentlyReading(local("currentlyReading"));
+      setRead(local("read"));
+    } else {
+      setWantToRead(defaultBooks.filter((book) => book.shelf === "wantToRead"));
+      setCurrentlyReading(
+        defaultBooks.filter((book) => book.shelf === "currentlyReading")
+      );
+      setRead(defaultBooks.filter((book) => book.shelf === "read"));
+    }
+  }, [defaultBooks]);
   // updating the local sotrage with new states
   useEffect(() => {
     localStorage.setItem("wantToRead", JSON.stringify(wantToRead));
