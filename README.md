@@ -25,7 +25,7 @@ the in the terminal use:
 ![](https://i.gyazo.com/f6abab1633237e51027779041a0f829e.png)
 
 #### Resources
--[create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
--[React Router](https://reactrouter.com/docs/en/v6)
--[react-debounce-input](https://www.npmjs.com/package/react-debounce-input)
+- [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
+- [React Router](https://reactrouter.com/docs/en/v6)
+- [react-debounce-input](https://www.npmjs.com/package/react-debounce-input)
 
