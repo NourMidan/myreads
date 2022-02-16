@@ -9,8 +9,8 @@ this project was built using create-react-app , in this project  , user have 3 b
 first you will need to have node.js installed
 the in the terminal use:
 
-`npm install` to install all project dependencies
-`npm start` to start the development server 
+- `npm install` to install all project dependencies
+- `npm start` to start the development server 
 
 - once the development server you the home page should open on  http://localhost:3000/ with a set of default books 
 
