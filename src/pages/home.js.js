@@ -6,7 +6,7 @@ import { BookShelf } from "../components/booksShelf";
 import { Search } from "./search";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { getAll } from "../BooksAPI";
+import { getAll, update } from "../BooksAPI";
 
 const BooksApp = (props) => {
   const [allBooks, setAllBooks] = useState([]);
@@ -51,15 +51,23 @@ const BooksApp = (props) => {
     setAllBooks([...wantToRead, ...currentlyReading, ...read]);
   }, [wantToRead, currentlyReading, read]);
 
-  // handling adding , moving , and deleting books from bookshelfs
+  // handling adding , moving , and deleting books from bookshelfs and updating the data in the backend
   const bookHandler = (oldType, newType, book) => {
     book.type = newType;
 
     // adding new book
-    newType === "currentlyReading" &&
+    if (newType === "currentlyReading") {
       setCurrentlyReading((prev) => [...prev, book]);
-    newType === "wantToRead" && setWantToRead((prev) => [...prev, book]);
-    newType === "read" && setRead((prev) => [...prev, book]);
+      update(book, "currentlyReading");
+    } else if (newType === "wantToRead") {
+      setWantToRead((prev) => [...prev, book]);
+      update(book, "wantToRead");
+    } else if (newType === "read") {
+      setRead((prev) => [...prev, book]);
+      update(book, "read");
+    } else {
+      update(book, "none");
+    }
 
     // deleting the book from old bookshelf if exists
     if (oldType === "currentlyReading") {
