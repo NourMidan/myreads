@@ -16,7 +16,7 @@ the in the terminal use:
 
 ![](https://i.gyazo.com/5e378556dbb45833fc783c8f07d6908e.png)
 
-- you can visit the search page using bottom right link
+- you can visit the search page using bottom right link, noting that only terms in [SEARCH_TERMS.md] are availabe
 
 ![](https://i.gyazo.com/288b3fd4e86091ae0f43a018edc4e872.png)
 
